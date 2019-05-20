@@ -11,12 +11,20 @@
 // about supported directives.
 //
 //= require jquery3
+//= require jquery.turbolinks
 //= require rails-ujs
 //= require activestorage
+//= require dependent-fields
 //= require vendor.min
+//= require underscore
+//= require dependent-fields
 //= require vendor/jquery.accordion
 //= require vendor/jquery.selectric
 //= require vendor/modernizr
 //= require vendor/prism
 //= require assets/app
 //= require_tree .
+
+$(document).ready(function() {
+  DependentFields.bind()
+});
