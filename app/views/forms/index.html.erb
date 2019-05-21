@@ -1,0 +1,113 @@
+<!-- form for data collection -->
+<section class="pt-0 row gutter-2 justify-content-center" style="background-color:#F18E00;">
+  <div class="col-md-6 pt-3 pl-2" style="display:flex; flex-direction:column; justify-content: center;">
+    <div class="card card-price-2" style=" height:95vh;">
+      <div class="card-body">
+        <strong class="card-price">Trust & Bench</strong>
+        <h4 class="card-title">Demandez votre benchmark personnalisé</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 pt-3 pr-2" style="display:flex; flex-direction:column; justify-content: center;">
+    <div class="card card-price-2" style=" height:95vh;">
+      <div class="card-body">
+        <%= form_for :collected_datum, :url => forms_path do |f| %>
+          <h4 class="card-title">Caractéristiques</h4>
+            <%= f.select(:approach, options_for_select(Approach.pluck(:label, :id), target_blank: true ))  %>
+            <%= f.select(:activity, options_for_select(Activity.pluck(:label, :id), target_blank: true ))  %>
+            <%= f.select(:size, options_for_select(Size.pluck(:label, :id), target_blank: true ))  %>
+          <h4 class="card-title">Données</h4>
+            <!-- "Approche globale" Data -->
+            <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'collected_datum_approach', 'option-value': 1} do %>
+              <div>
+                <%= f.label "CA" %>
+                <%= f.text_field :ca_globale %>
+              </div>
+              <div>
+                <%= f.label "SG&A" %>
+                <%= f.text_field :sga %>
+              </div>
+              <div>
+                <%= f.label "G&A" %>
+                <%= f.text_field :ga %>
+              </div>
+              <div>
+                <%= f.label "Coût Finance" %>
+                <%= f.text_field :finance_globale %>
+              </div>
+              <div>
+                <%= f.label "Dépenses IT" %>
+                <%= f.text_field :it %>
+              </div>
+              <div>
+                <%= f.label "Selling & Marketing cost" %>
+                <%= f.text_field :sm %>
+              </div>
+              <div>
+                <%= f.label "Dépense Marketing" %>
+                <%= f.text_field :marketing %>
+              </div>
+              <div>
+                <%= f.label "Nombre de salariés" %>
+                <%= f.text_field :people %>
+              </div>
+              <div>
+                <%= f.label "Nombre d'ETP RH" %>
+                <%= f.text_field :rh %>
+              </div>
+            <% end %>
+            <!-- "Approche par fonction - Finance" -->
+            <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'collected_datum_approach', 'option-value': 2} do %>
+              <div>
+                <%= f.label "CA" %>
+                <%= f.text_field :ca_finance %>
+              </div>
+              <div>
+                <%= f.label "Coût Finance" %>
+                <%= f.text_field :finance_finance %>
+              </div>
+              <div>
+                <%= f.label "Coût Comptabilité" %>
+                <%= f.text_field :accounting %>
+              </div>
+              <div>
+                <%= f.label "Coût Contrôle de Gestion" %>
+                <%= f.text_field :controlling %>
+              </div>
+              <div>
+                <%= f.label "Centre de Service Partagé" %>
+                <%= f.check_box :csp, {}, true, false %>
+              </div>
+              <div>
+                <%= f.label "Maturité digitale" %>
+                <%= f.select(:digital, options_for_select([['0%', 1], ['25%', 2], ['50%', 3], ['75%', 4], ['100%', 5]])) %>
+              </div>
+            <% end %>
+          <h4 class="card-title">Contact</h4>
+              <div>
+                <%= f.label "Prénom" %>
+                <%= f.text_field :first_name %>
+              </div>
+              <div>
+                <%= f.label "Nom" %>
+                <%= f.text_field :last_name %>
+              </div>
+              <div>
+                <%= f.label "Courriel" %>
+                <%= f.text_field :email %>
+              </div>
+              <div>
+                <%= f.label "Entreprise" %>
+                <%= f.text_field :company %>
+              </div>
+              <div>
+                <%= f.label "Poste occupé" %>
+                <%= f.text_field :position %>
+              </div>          
+            <%= f.submit "Demande du benchmark", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
