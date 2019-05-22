@@ -5,7 +5,7 @@ class FormsController < ApplicationController
     if params[:collected_datum][:approach] == "1"
       #Approche globale
       # SG&A sur CA
-      @collected_data_1 = CollectedDatum.new(value: 1.0/2.0, numerator: params[:collected_datum][:sga], denominator: params[:collected_datum][:ca_globale], first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 1)
+      @collected_data_1 = CollectedDatum.new(value: params[:collected_datum][:sga].to_f / params[:collected_datum][:ca_globale].to_f, numerator: params[:collected_datum][:sga], denominator: params[:collected_datum][:ca_globale], first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 1)
       # G&A sur CA
       @collected_data_2 = CollectedDatum.new(value: params[:collected_datum][:first_name], numerator: params[:collected_datum][:ga], denominator: params[:collected_datum][:ca_globale], first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 2)
       # Coût Finance sur CA
@@ -20,8 +20,10 @@ class FormsController < ApplicationController
       @collected_data_7 = CollectedDatum.new(value: params[:collected_datum][:first_name], numerator: params[:collected_datum][:marketing], denominator: params[:collected_datum][:ca_globale], first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 7)
       if @collected_data_1.save! && @collected_data_2.save! && @collected_data_3.save! && @collected_data_4.save! && @collected_data_5.save! && @collected_data_6.save! && @collected_data_7.save! # save collected data in the db
         redirect_to root_path
+        flash[:success] = "Informations bien prises en compte"
       else
         redirect_to root_path
+        flash[:error] = "Erreur dans la saisie des données"
       end
     elsif params[:collected_datum][:approach] == 2
       #Approche par fonction - Finance
