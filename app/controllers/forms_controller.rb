@@ -1,5 +1,6 @@
 class FormsController < ApplicationController
-  require 'csv'    
+  require 'csv'
+
   def index
   end
   def create
