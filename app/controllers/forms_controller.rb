@@ -33,21 +33,11 @@ class FormsController < ApplicationController
         csv_bench = CSV.generate do |csv| 
           csv << ["Libellé", "Valeur médiane", "Valeur min", "Valeur max"]
           Bench.all.each do |bench|
-            puts "<><><><><><><><><><><><><><><><><><><><>"
-            puts bench.approach_id.class
-            puts params[:collected_datum][:approach].class
-            puts bench.approach_id == params[:collected_datum][:approach].to_i
-            puts "<><><><><><><><><><><><><><><><><><><><>"
             if bench.approach_id == params[:collected_datum][:approach].to_i && bench.activity_id == params[:collected_datum][:activity].to_i && bench.size_id == params[:collected_datum][:size].to_i
               csv << [bench.kpi.label,bench.median_value,bench.min_value,bench.max_value]
             end
           end
         end
-        puts "<><><><><><><><><><><><><><><><><><><><>"
-        puts csv_collected_data
-        puts "----------------------------------------"
-        puts csv_bench
-        puts "<><><><><><><><><><><><><><><><><><><><>"
         redirect_to root_path
         flash[:success] = "Informations bien prises en compte"
       else
