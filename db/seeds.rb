@@ -42,3 +42,7 @@ Size.create!(label: "CA < 50M€")
 Size.create!(label: "CA entre 50 et 250M€")
 Size.create!(label: "CA > 250M€")
 Size.create!(label: "Non précisée")
+
+#Bench Creation
+Bench.create!(median_value: "8.13%", min_value:"28.84%", max_value:"2.65%", source:"https://saibooks.com/sga-benchmarks/", kpi_id: 1, approach_id: 1, activity_id:6, size_id:4)
+Bench.create!(median_value: "17.31%", min_value:"37.88%", max_value:"7.19%", source:"https://saibooks.com/sga-benchmarks/", kpi_id: 1, approach_id: 1, activity_id:2, size_id:4)

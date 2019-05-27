@@ -5,7 +5,11 @@ class CollectedDatum < ApplicationRecord
   belongs_to :size
   after_create :send_csv
 
+  private
+
   def send_csv
-    AdminMailer.send_csv.deliver_now
+    if kpi_id == 1
+      AdminMailer.send_csv.deliver_now
+    end
   end
 end
