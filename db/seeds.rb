@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #KPI Creation
-#Kpi.create!(label: "SG&A sur CA");
-#Kpi.create!(label: "G&A sur CA");
-#Kpi.create!(label: "Coût Finance sur CA");
-#Kpi.create!(label: "SG&A sur CA");
-#Kpi.create!(label: "Salariés gérés par ETP RH");
-#Kpi.create!(label: "Selling & Marketing cost sur CA");
-#Kpi.create!(label: "Coût Marketing sur CA");
+Kpi.create!(label: "SG&A sur CA");
+Kpi.create!(label: "G&A sur CA");
+Kpi.create!(label: "Coût Finance sur CA");
+Kpi.create!(label: "SG&A sur CA");
+Kpi.create!(label: "Salariés gérés par ETP RH");
+Kpi.create!(label: "Selling & Marketing cost sur CA");
+Kpi.create!(label: "Coût Marketing sur CA");
 
 #Aproach Creation
 Approach.create!(label: "Approche globale");
