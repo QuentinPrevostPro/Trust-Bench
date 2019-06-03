@@ -34,3 +34,35 @@ window.setTimeout(function () {
     $(this).remove();
   });
 }, 2000);
+
+window.onload = function() {
+  document.getElementById("form-modal").style.display = 'none';
+};
+
+
+function selectedApproach() {
+  var approach = document.getElementById("mySelect").value;
+  if (approach == "Default") {
+    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+  } else if (approach == "Global") {
+    document.getElementById("form-modal").style.display = '';
+    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").dataset.target = "#modalGlobal";
+  } else if (approach == "Finance") {
+    document.getElementById("form-modal").style.display = '';
+    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").dataset.target = "#modalFinance";
+  } else if (approach == "IT") {
+    document.getElementById("form-modal").style.display = '';
+    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").dataset.target = "#modalIT";
+  } else if (approach == "HR") {
+    document.getElementById("form-modal").style.display = '';
+    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").dataset.target = "#modalHR";
+  }  else if (approach == "Sales") {
+    document.getElementById("form-modal").style.display = '';
+    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").dataset.target = "#modalSales";
+  }
+}

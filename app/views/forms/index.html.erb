@@ -12,6 +12,17 @@
   <div class="col-md-6 pt-3 pr-2" style="display:flex; flex-direction:column; justify-content: center;">
     <div class="card card-price-2" style="">
       <div class="card-body">
+      <!-- Choose the approach-->
+      <h4 class="card-title">Caractéristiques</h4>
+      <select id="mySelect" onchange="selectedApproach()">
+        <option value="Default">Veuillez choisir une approche</option>
+        <option value="Global">Approche Globale</option>
+        <option value="Finance">Approche par fonction - Finance</option>
+        <option value="HR">Approche par fonction - RH</option>
+        <option value="IT">Approche par fonction - IT</option>
+        <option value="Sales">Approche par fonction - Marketing & Ventes</option>
+      </select>
+      <button type="button" class="btn btn-primary" id="form-modal" data-toggle="modal" data-target=""></button>
         <%= form_for :collected_datum, :url => forms_path do |f| %>
           <h4 class="card-title">Caractéristiques</h4>
             <%= f.select(:approach, options_for_select(Approach.pluck(:label, :id), target_blank: true ))  %>
@@ -113,11 +124,9 @@
 </section>
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <%= render 'layouts/modal'%>
+<div class="modal fade" id="modalGlobal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <%= render 'layouts/modal_global'%>
+</div>
+<div class="modal fade" id="modalFinance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <%= render 'layouts/modal_finance'%>
 </div>
