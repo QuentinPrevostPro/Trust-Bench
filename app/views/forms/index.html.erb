@@ -22,6 +22,13 @@
         <option value="IT">Approche par fonction - IT</option>
         <option value="Sales">Approche par fonction - Marketing & Ventes</option>
       </select>
+      <!-- Modal by approach -->
+      <div class="modal fade" id="modalGlobal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'layouts/modal_global'%>
+      </div>
+      <div class="modal fade" id="modalFinance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'layouts/modal_finance'%>
+      </div>
       <button type="button" class="btn btn-primary" id="form-modal" data-toggle="modal" data-target=""></button>
         <%= form_for :collected_datum, :url => forms_path do |f| %>
           <h4 class="card-title">Caractéristiques</h4>
@@ -124,9 +131,4 @@
 </section>
 
 
-<div class="modal fade" id="modalGlobal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <%= render 'layouts/modal_global'%>
-</div>
-<div class="modal fade" id="modalFinance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <%= render 'layouts/modal_finance'%>
-</div>
+
