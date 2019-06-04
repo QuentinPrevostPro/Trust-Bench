@@ -66,3 +66,12 @@ function selectedApproach() {
     document.getElementById("form-modal").dataset.target = "#modalSales";
   }
 }
+
+$(function() {
+  $(".step-2").click(function() {
+    $("#modalGlobalStep2").modal();
+  });
+  $(".step-3").click(function() {
+    $("#modalGlobalStep3").modal();
+  });
+});
