@@ -13,10 +13,29 @@
             <div class="progress-bar bg-primary" role="progressbar" style="width: 100%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias alias ipsam minima, dolore! Modi enim porro neque quaerat blanditiis. Ipsa aliquam quam maxime rerum eum accusamus nulla, molestiae soluta repellendus!</p>
-    </div>
+        <div>
+          <%= f.label "Prénom" %>
+          <%= f.text_field :first_name %>
+        </div>
+        <div>
+          <%= f.label "Nom" %>
+          <%= f.text_field :last_name %>
+        </div>
+        <div>
+          <%= f.label "Courriel" %>
+          <%= f.text_field :email %>
+        </div>
+        <div>
+          <%= f.label "Entreprise" %>
+          <%= f.text_field :company %>
+        </div>
+        <div>
+          <%= f.label "Poste occupé" %>
+          <%= f.text_field :position %>
+        </div>
+      </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Save changes</button>
+      <%= f.submit "Demande du benchmark", class: "btn btn-primary step-4" %>
     </div>
   </div>
 </div>

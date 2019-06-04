@@ -22,189 +22,25 @@
           <option value="IT">Approche par fonction - IT</option>
           <option value="Sales">Approche par fonction - Marketing & Ventes</option>
         </select>
+        <button type="button" class="btn btn-primary" id="form-modal" data-toggle="modal" data-target=""></button>
         
         <!-- Global approach -->
         <%= form_for :collected_datum, :url => forms_path do |f| %>
+          <!-- Characteristic modal -->
           <div class="modal fade" id="modalGlobal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <%= render 'layouts/modal_global_characteristics', f: f %>
           </div>
-          <h4 class="card-title">Données</h4>
-            <!-- "Approche globale" Data -->
-            <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'collected_datum_approach', 'option-value': 1} do %>
-              <div>
-                <%= f.label "CA" %>
-                <%= f.text_field :ca_globale %>
-              </div>
-              <div>
-                <%= f.label "SG&A" %>
-                <%= f.text_field :sga %>
-              </div>
-              <div>
-                <%= f.label "G&A" %>
-                <%= f.text_field :ga %>
-              </div>
-              <div>
-                <%= f.label "Coût Finance" %>
-                <%= f.text_field :finance_globale %>
-              </div>
-              <div>
-                <%= f.label "Dépenses IT" %>
-                <%= f.text_field :it %>
-              </div>
-              <div>
-                <%= f.label "Selling & Marketing cost" %>
-                <%= f.text_field :sm %>
-              </div>
-              <div>
-                <%= f.label "Dépense Marketing" %>
-                <%= f.text_field :marketing %>
-              </div>
-              <div>
-                <%= f.label "Nombre de salariés" %>
-                <%= f.text_field :people %>
-              </div>
-              <div>
-                <%= f.label "Nombre d'ETP RH" %>
-                <%= f.text_field :rh %>
-              </div>
-            <% end %>
-          <h4 class="card-title">Contact</h4>
-              <div>
-                <%= f.label "Prénom" %>
-                <%= f.text_field :first_name %>
-              </div>
-              <div>
-                <%= f.label "Nom" %>
-                <%= f.text_field :last_name %>
-              </div>
-              <div>
-                <%= f.label "Courriel" %>
-                <%= f.text_field :email %>
-              </div>
-              <div>
-                <%= f.label "Entreprise" %>
-                <%= f.text_field :company %>
-              </div>
-              <div>
-                <%= f.label "Poste occupé" %>
-                <%= f.text_field :position %>
-              </div>          
-            <%= f.submit "Demande du benchmark", class: "btn btn-primary" %>
-        <% end %>
-        
-
-        <div class="modal fade" id="modalGlobalStep2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <%= render 'layouts/modal_global_metrics'%>
-        </div>
-        <div class="modal fade" id="modalGlobalStep3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <%= render 'layouts/modal_global_contacts'%>
-        </div>
-        <button type="button" class="btn btn-primary" id="form-modal" data-toggle="modal" data-target=""></button>
-
-        <!--Finance approach -->
-        <div class="modal fade" id="modalFinance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <%= render 'layouts/modal_finance'%>
-        </div>
-
-        
-        <%= form_for :collected_datum, :url => forms_path do |f| %>
-          <h4 class="card-title">Caractéristiques</h4>
-            <%= f.select(:approach, options_for_select(Approach.pluck(:label, :id), target_blank: true ))  %>
-            <%= f.select(:activity, options_for_select(Activity.pluck(:label, :id), target_blank: true ))  %>
-            <%= f.select(:size, options_for_select(Size.pluck(:label, :id), target_blank: true ))  %>
-          <h4 class="card-title">Données</h4>
-            <!-- "Approche globale" Data -->
-            <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'collected_datum_approach', 'option-value': 1} do %>
-              <div>
-                <%= f.label "CA" %>
-                <%= f.text_field :ca_globale %>
-              </div>
-              <div>
-                <%= f.label "SG&A" %>
-                <%= f.text_field :sga %>
-              </div>
-              <div>
-                <%= f.label "G&A" %>
-                <%= f.text_field :ga %>
-              </div>
-              <div>
-                <%= f.label "Coût Finance" %>
-                <%= f.text_field :finance_globale %>
-              </div>
-              <div>
-                <%= f.label "Dépenses IT" %>
-                <%= f.text_field :it %>
-              </div>
-              <div>
-                <%= f.label "Selling & Marketing cost" %>
-                <%= f.text_field :sm %>
-              </div>
-              <div>
-                <%= f.label "Dépense Marketing" %>
-                <%= f.text_field :marketing %>
-              </div>
-              <div>
-                <%= f.label "Nombre de salariés" %>
-                <%= f.text_field :people %>
-              </div>
-              <div>
-                <%= f.label "Nombre d'ETP RH" %>
-                <%= f.text_field :rh %>
-              </div>
-            <% end %>
-            <!-- "Approche par fonction - Finance" -->
-            <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'collected_datum_approach', 'option-value': 2} do %>
-              <div>
-                <%= f.label "CA" %>
-                <%= f.text_field :ca_finance %>
-              </div>
-              <div>
-                <%= f.label "Coût Finance" %>
-                <%= f.text_field :finance_finance %>
-              </div>
-              <div>
-                <%= f.label "Coût Comptabilité" %>
-                <%= f.text_field :accounting %>
-              </div>
-              <div>
-                <%= f.label "Coût Contrôle de Gestion" %>
-                <%= f.text_field :controlling %>
-              </div>
-              <div>
-                <%= f.label "Centre de Service Partagé" %>
-                <%= f.check_box :csp, {}, true, false %>
-              </div>
-              <div>
-                <%= f.label "Maturité digitale" %>
-                <%= f.select(:digital, options_for_select([['0%', 1], ['25%', 2], ['50%', 3], ['75%', 4], ['100%', 5]])) %>
-              </div>
-            <% end %>
-          <h4 class="card-title">Contact</h4>
-              <div>
-                <%= f.label "Prénom" %>
-                <%= f.text_field :first_name %>
-              </div>
-              <div>
-                <%= f.label "Nom" %>
-                <%= f.text_field :last_name %>
-              </div>
-              <div>
-                <%= f.label "Courriel" %>
-                <%= f.text_field :email %>
-              </div>
-              <div>
-                <%= f.label "Entreprise" %>
-                <%= f.text_field :company %>
-              </div>
-              <div>
-                <%= f.label "Poste occupé" %>
-                <%= f.text_field :position %>
-              </div>          
-            <%= f.submit "Demande du benchmark", class: "btn btn-primary" %>
+          <!-- Contact modal -->
+          <div class="modal fade" id="modalGlobalStep3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <%= render 'layouts/modal_global_contacts', f: f %>
+          </div>
+          <!-- Metric modal -->
+          <div class="modal fade" id="modalGlobalStep2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <%= render 'layouts/modal_global_metrics', f: f %>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 </section>
-
 

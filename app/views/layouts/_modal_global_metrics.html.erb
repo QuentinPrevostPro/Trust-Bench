@@ -1,23 +1,58 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
-    <div class="modal-header justify-content-end">
+    <div class="modal-header justify-content-end pt-0 pb-0">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <i class="fas fa-times"></i>
       </button>
     </div>
-    <div class="modal-body text-center">
+    <div class="modal-body text-center pt-0 pb-0">
       <h3>Approche globale</h3>
-      <p>Saisie des metrics (2/3)</p>
+      <h4>Saisie des metrics (2/3)</h4>
       <div class="progress-item">
-        <div class="progress">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 66.6666%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress">
+              <div class="progress-bar bg-primary" role="progressbar" style="width: 66.6666%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
         </div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias alias ipsam minima, dolore! Modi enim porro neque quaerat blanditiis. Ipsa aliquam quam maxime rerum eum accusamus nulla, molestiae soluta repellendus!</p>
+      <div>
+        <div>
+          <%= f.label "CA" %>
+          <%= f.text_field :ca_globale %>
+        </div>
+        <div>
+          <%= f.label "SG&A" %>
+          <%= f.text_field :sga %>
+        </div>
+        <div>
+          <%= f.label "G&A" %>
+          <%= f.text_field :ga %>
+        </div>
+        <div>
+          <%= f.label "Coût Finance" %>
+          <%= f.text_field :finance_globale %>
+        </div>
+        <div>
+          <%= f.label "Dépenses IT" %>
+          <%= f.text_field :it %>
+        </div>
+        <div>
+          <%= f.label "Selling & Marketing cost" %>
+          <%= f.text_field :sm %>
+        </div>
+        <div>
+          <%= f.label "Dépense Marketing" %>
+          <%= f.text_field :marketing %>
+        </div>
+        <div>
+          <%= f.label "Nombre de salariés" %>
+          <%= f.text_field :people %>
+        </div>
+        <div>
+          <%= f.label "Nombre d'ETP RH" %>
+          <%= f.text_field :rh %>
+        </div>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-primary btn-block step-3" data-dismiss="modal">Save changes</button>
+    <div class="modal-footer pt-2 pb-2">    
+      <button type="button" class="btn btn-primary btn-block step-3" data-dismiss="modal">Etape suivante</button>
     </div>
   </div>
 </div>
-

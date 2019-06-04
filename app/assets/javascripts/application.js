@@ -74,4 +74,7 @@ $(function() {
   $(".step-3").click(function() {
     $("#modalGlobalStep3").modal();
   });
+  $(".step-4").click(function() {
+    $("#modalGlobalStep3").modal('hide');
+  });
 });
