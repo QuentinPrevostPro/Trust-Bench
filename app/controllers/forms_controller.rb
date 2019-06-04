@@ -40,7 +40,7 @@ class FormsController < ApplicationController
           end
         end
         redirect_to root_path
-        flash[:success] = "Informations bien prises en compte"
+        flash[:success] = "Votre demande de benchmark a bien été prise en compte"
       else
         redirect_to root_path
         flash[:error] = "Erreur dans la saisie des données"
