@@ -21,16 +21,17 @@ class FormsController < ApplicationController
       # Coût Marketing sur CA
       @collected_data_7 = CollectedDatum.new(value: params[:collected_datum][:marketing].to_f / params[:collected_datum][:ca_globale].to_f, numerator: params[:collected_datum][:marketing], denominator: params[:collected_datum][:ca_globale], first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 7)
       if @collected_data_1.save! && @collected_data_2.save! && @collected_data_3.save! && @collected_data_4.save! && @collected_data_5.save! && @collected_data_6.save! && @collected_data_7.save! # save collected data in the db
-        csv_collected_data = CSV.generate do |csv| 
+        csv_collected_data = CSV.open("collected_data.csv", "wb") do |csv| 
           csv << ["Libellé", "Valeur", "Numérateur", "Dénominateur",]
           csv << [@collected_data_1.kpi.label, @collected_data_1.value, @collected_data_1.numerator, @collected_data_1.denominator]
           csv << [@collected_data_2.kpi.label, @collected_data_2.value, @collected_data_2.numerator, @collected_data_2.denominator]
-          csv << [@collected_data_3.kpi.label, @collected_data_3.value, @collected_data_3.numerator, @collected_data_4.denominator]
+          csv << [@collected_data_3.kpi.label, @collected_data_3.value, @collected_data_3.numerator, @collected_data_3.denominator]
+          csv << [@collected_data_4.kpi.label, @collected_data_4.value, @collected_data_4.numerator, @collected_data_4.denominator]
           csv << [@collected_data_5.kpi.label, @collected_data_5.value, @collected_data_5.numerator, @collected_data_5.denominator]
           csv << [@collected_data_6.kpi.label, @collected_data_6.value, @collected_data_6.numerator, @collected_data_6.denominator]
           csv << [@collected_data_7.kpi.label, @collected_data_7.value, @collected_data_7.numerator, @collected_data_7.denominator]
         end
-        csv_bench = CSV.generate do |csv| 
+        csv_bench = CSV.open("bench.csv", "wb") do |csv|
           csv << ["Libellé", "Valeur médiane", "Valeur min", "Valeur max"]
           Bench.all.each do |bench|
             if bench.approach_id == params[:collected_datum][:approach].to_i && bench.activity_id == params[:collected_datum][:activity].to_i && bench.size_id == params[:collected_datum][:size].to_i
@@ -44,6 +45,11 @@ class FormsController < ApplicationController
         redirect_to root_path
         flash[:error] = "Erreur dans la saisie des données"
       end
+
+
+
+
+
     #Approche par fonction - Finance
     elsif params[:collected_datum][:approach] == 2
     #Approche par fonction - RH  

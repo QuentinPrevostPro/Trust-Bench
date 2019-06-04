@@ -13,6 +13,7 @@
             <div class="progress-bar bg-primary" role="progressbar" style="width: 33.3333%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
+      <%= f.hidden_field :approach, value: "1" %>
       <%= f.select(:activity, options_for_select(Activity.pluck(:label, :id), target_blank: true ))  %>
       <%= f.select(:size, options_for_select(Size.pluck(:label, :id), target_blank: true ))  %>
     </div>
