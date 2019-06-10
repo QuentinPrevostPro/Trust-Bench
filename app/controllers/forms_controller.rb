@@ -4,7 +4,7 @@ class FormsController < ApplicationController
   def index
   end
   def create
-    @session = GoogleDrive::Session.from_service_account_key('client_secret.json')
+    #@session = GoogleDrive::Session.from_service_account_key('client_secret.json')
     #Approche globale
     if params[:collected_datum][:approach] == "1"
       # SG&A sur CA
@@ -31,8 +31,7 @@ class FormsController < ApplicationController
           csv << [@collected_data_5.kpi.label, @collected_data_5.value, @collected_data_5.numerator, @collected_data_5.denominator]
           csv << [@collected_data_6.kpi.label, @collected_data_6.value, @collected_data_6.numerator, @collected_data_6.denominator]
           csv << [@collected_data_7.kpi.label, @collected_data_7.value, @collected_data_7.numerator, @collected_data_7.denominator]
-        end
-        #puts @session.create_spreadsheet(title = 'Test')
+        end        
         csv_bench = CSV.open("bench.csv", "wb") do |csv|
           csv << ["Libellé", "Valeur médiane", "Valeur min", "Valeur max"]
           Bench.all.each do |bench|
@@ -41,6 +40,7 @@ class FormsController < ApplicationController
             end
           end
         end
+        AdminMailer.send_csv_attachment.deliver_now
         redirect_to root_path
         flash[:success] = "Votre demande de benchmark a bien été prise en compte"
       else

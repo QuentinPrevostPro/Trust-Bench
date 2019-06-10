@@ -3,13 +3,13 @@ class CollectedDatum < ApplicationRecord
   belongs_to :approach
   belongs_to :activity
   belongs_to :size
-  after_create :send_csv
+  after_create :send_confirmation
 
   private
 
-  def send_csv
+  def send_confirmation
     if kpi_id == 1
-      AdminMailer.send_csv.deliver_now
+      AdminMailer.send_confirmation.deliver_now
     end
   end
 end
