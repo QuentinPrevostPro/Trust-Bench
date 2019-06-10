@@ -9,7 +9,7 @@ class CollectedDatum < ApplicationRecord
 
   def send_confirmation
     if kpi_id == 1
-      AdminMailer.send_confirmation.deliver_now
+      AdminMailer.send_confirmation(self).deliver_now
     end
   end
 end

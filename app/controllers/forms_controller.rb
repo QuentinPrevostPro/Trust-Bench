@@ -40,7 +40,7 @@ class FormsController < ApplicationController
             end
           end
         end
-        AdminMailer.send_csv_attachment.deliver_now
+        AdminMailer.send_csv_attachment(@collected_data_1).deliver_now
         redirect_to root_path
         flash[:success] = "Votre demande de benchmark a bien été prise en compte"
       else
