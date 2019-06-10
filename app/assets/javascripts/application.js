@@ -44,6 +44,7 @@ function selectedApproach() {
   var approach = document.getElementById("mySelect").value;
   if (approach == "Default") {
     document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").style.display = 'none';
   } else if (approach == "Global") {
     document.getElementById("form-modal").style.display = '';
     document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
