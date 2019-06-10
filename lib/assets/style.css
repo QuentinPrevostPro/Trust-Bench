@@ -1275,7 +1275,7 @@ pre {
   .form-control:focus {
     color: #151515;
     background-color: #fff;
-    border-color: #917ae0;
+    border-color: #f18e00;
     outline: 0;
     box-shadow: 0; }
   .form-control::placeholder {
