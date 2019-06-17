@@ -4,7 +4,20 @@ class FormsController < ApplicationController
   def index
   end
   def create
-    #@session = GoogleDrive::Session.from_service_account_key('client_secret.json')
+    
+    #Size Category
+    if params[:collected_datum][:ca_globale].to_f <= 500 #CA inférieur à 500M€
+      params[:collected_datum][:size] = "1"
+    elsif params[:collected_datum][:ca_globale].to_f > 500 && params[:collected_datum][:ca_globale].to_f <= 1000 #CA entre 500M€ et 1Mrd€
+      params[:collected_datum][:size] = "2"
+    elsif params[:collected_datum][:ca_globale].to_f > 1000 && params[:collected_datum][:ca_globale].to_f <= 10000 #CA entre 1Mrd€ et 10Mrd€
+      params[:collected_datum][:size] = "3"
+    elsif params[:collected_datum][:ca_globale].to_f > 10000 && params[:collected_datum][:ca_globale].to_f <= 50000 #CA entre 10Mrd€ et 50Mrd€
+      params[:collected_datum][:size] = "4"
+    elsif params[:collected_datum][:ca_globale].to_f > 50000 #CA supérieur à 50Mrd€
+      params[:collected_datum][:size] = "5"
+    end
+
     #Approche globale
     if params[:collected_datum][:approach] == "1"
       # SG&A sur CA
