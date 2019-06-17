@@ -3,10 +3,10 @@ class AdminMailer < ApplicationMailer
     @collected_data = collected_data
     mail(to: @collected_data.email, subject: "Trust&Bench - Votre demande a bien été prise en compte")
   end
-  def send_csv_attachment(collected_data)
+  def send_csv_attachment(collected_data, csv_export)
     @collected_data = collected_data
-    attachments["#{DateTime.now.strftime("%Y%m%d")}_données_récupérées.csv"] = {mime_type: 'text/csv', content: File.read(Rails.root.join('collected_data.csv'))}
-    attachments["#{DateTime.now.strftime("%Y%m%d")}_benchmark_associé.csv"] = {mime_type: 'text/csv', content: File.read(Rails.root.join('bench.csv'))}
-    mail(to: "trust-bench@yopmail.com", subject: 'Une nouvelle demande a été faite sur Trust&Bench')
+    @csv_export = csv_export
+    attachments["#{DateTime.now.strftime("%Y%m%d")}_données_récupérées.csv"] = {mime_type: 'text/csv', content: @csv_export}
+    mail(to: "quentin.prevost@argon-consult.com", subject: 'Une nouvelle demande a été faite sur Trust&Bench')
   end
 end
