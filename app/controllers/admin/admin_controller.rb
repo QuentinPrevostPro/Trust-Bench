@@ -8,7 +8,7 @@ class Admin::AdminController < AdminController
 		elsif params[:extract] == "bench"
 			@bench = Bench.all
 			respond_to do |format|
-				format.csv { send_data @bench.to_csv, filename: "#{DateTime.now.strftime("%Y%m%d")}benchmark.csv" }
+				format.csv { send_data @bench.to_csv, filename: "#{DateTime.now.strftime("%Y%m%d")}_benchmark.csv" }
 			end
 		end	
 	end
