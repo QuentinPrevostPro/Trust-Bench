@@ -86,11 +86,11 @@
                   <div style="width:40%;">
                     <select id="mySelect" onchange="selectedApproach()">
                       <option value="Default">Choisir un périmètre</option>
-                      <option value="Global">Périmètre global Finance</option>
-                      <option value="Finance">Fonction Finance</option>
-                      <option value="HR">Fonction RH</option>
-                      <option value="IT">Fonction IT</option>
-                      <option value="Sales">Fonction Marketing & Ventes</option>
+                      <option value="Global"><%= @approaches.find(1).label %></option>
+                      <option value="Finance"><%= @approaches.find(2).label %></option>
+                      <option value="HR"><%= @approaches.find(3).label %></option>
+                      <option value="IT"><%= @approaches.find(4).label %></option>
+                      <option value="Sales"><%= @approaches.find(5).label %></option>
                     </select>
                   </div>
                   <button type="button" class="btn btn-primary" id="form-modal" data-toggle="modal" data-target=""></button>

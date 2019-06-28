@@ -41,7 +41,7 @@ window.onload = function() {
 
 
 function selectedApproach() {
-  var approach = document.getElementById("mySelect").value;
+  let approach = document.getElementById("mySelect").value;
   if (approach == "Default") {
     document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
     document.getElementById("form-modal").style.display = 'none';
@@ -82,8 +82,8 @@ $(function() {
 
 $(document).ready(function() {
   
-  var scrollLink = $('.scroll-smooth');
-  var scrollLinkFast = $('.scroll-smooth-fast');
+  let scrollLink = $('.scroll-smooth');
+  let scrollLinkFast = $('.scroll-smooth-fast');
 
   // Smooth scrolling
   scrollLink.click(function(e) {

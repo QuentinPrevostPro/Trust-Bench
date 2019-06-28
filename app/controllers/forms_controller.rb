@@ -1,5 +1,6 @@
 class FormsController < ApplicationController
   def index
+    @approaches = Approach.all
   end
   def create
     @csv_array = []
