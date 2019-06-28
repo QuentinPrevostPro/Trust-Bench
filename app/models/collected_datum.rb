@@ -6,7 +6,7 @@ class CollectedDatum < ApplicationRecord
   after_create :send_confirmation
 
   def self.to_csv
-    attributes = %w{value numerator denominator first_name last_name email company position kpi_id approach_id activity_id size_id created_at}
+    attributes = %w{approach_id kpi_id activity_id size_id value numerator denominator first_name last_name email company position created_at}
     CSV.generate(headers: true, col_sep: ';', encoding: 'ISO-8859-1') do |csv|
       csv << attributes
       all.each do |collected_data| 

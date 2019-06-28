@@ -43,10 +43,11 @@
                   </i>
                 </div>
                 <h5 class="card-title">Historique des données saisies par les prospects</h5>
+                <hr class="m-0">
               </div>
               <div class="d-flex justify-content-center mb-2">
                 <% if user_signed_in? && current_user.is_admin %>
-                  <%= link_to "Exporter en CSV", admin_root_path(:extract => "collect", format: "csv"), style:'width:50%;', class: "btn btn-primary" %>
+                  <%= link_to "Exporter en CSV", admin_index_path(:extract => "collect", format: "csv"), style:'width:50%;', class: "btn btn-primary" %>
                 <% else %>
                   <%= link_to "Exporter en CSV", new_user_session_path, style:'width:50%;', class: "btn btn-primary" %>
                 <% end %>
@@ -62,16 +63,45 @@
                   </i>
                 </div>
                 <h5 class="card-title">Données du benchmark actuel</h5>
+                <hr class="m-0">
               </div>
-              <div>
               <div class="d-flex justify-content-center mb-2">
                 <% if user_signed_in? && current_user.is_admin %>
-                  <%= link_to "Exporter en CSV", admin_root_path(:extract => "bench", format: "csv"), style:'width:50%;', class: "btn btn-primary" %>
+                  <%= link_to "Exporter en CSV", admin_index_path(:extract => "bench", format: "csv"), style:'width:50%;', class: "btn btn-primary" %>
                 <% else %>
                   <%= link_to "Exporter en CSV", new_user_session_path, style:'width:50%;', class: "btn btn-primary" %>
                 <% end %>
-
               </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card card-price">
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <i class="svg-icon w-50 equal">
+                    <%= image_tag "admin-upload.svg", style:'width:100%;'%>
+                  </i>
+                </div>
+                <h5 class="card-title">Mettre à jour le benchmark</h5>
+                <% if !user_signed_in? %>
+                  <hr class="mb-0 mt-5">
+                <% end %>
+              </div>
+              <div>              
+                <% if user_signed_in? && current_user.is_admin %>
+                  <%= form_for :bench, :url => admin_index_path do |f| %>
+                    <div class="pl-4 mb-2">
+                      <%= f.file_field :file, class: 'form-control-file', required: true %>
+                    </div>
+                    <div class="d-flex justify-content-center mb-2">
+                      <%= f.submit "Importer un CSV", class: 'btn btn-primary' %>
+                    </div>
+                  <% end %>
+                <% else %>
+                <div class="d-flex justify-content-center mb-2">
+                  <%= link_to "Importer en CSV", new_user_session_path, style:'width:50%;', class: "btn btn-primary" %>
+                </div>
+                <% end %>
             </div>
           </div>
         </div>
