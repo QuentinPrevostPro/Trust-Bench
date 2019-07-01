@@ -101,3 +101,11 @@ $(document).ready(function() {
     }, 1000 );
   });
 })
+
+//Question mark popover
+$(function () {
+  $('[data-toggle="popover"]').popover()
+  $('.popover-dismiss').popover({
+    trigger: 'focus'
+  })  
+})
