@@ -1,4 +1,4 @@
-<div class="modal-dialog modal-dialog-centered" role="document">
+<div style="width:1000px;" class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
     <div class="modal-header justify-content-end pt-0 pb-0">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -14,12 +14,12 @@
           </div>
         </div>
       <div class="row" style="overflow: scroll; height: 300px;">
-        <div class="col-6">
+        <div class="col-4">
           <div class = "mt-4">
-              <%= f.label "Chiffre d'affaires (M€):"%>
-              <button style="border:none;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Le chiffre d'affaires correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
-                <i class="far fa-xs fa-question-circle qm-color"></i>
-              </button>
+            <%= f.label "Chiffre d'affaires (M€):"%>
+            <button style="border:none;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Le chiffre d'affaires correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
+              <i class="far fa-xs fa-question-circle qm-color"></i>
+            </button>
             <%= f.text_field :ca_globale, class:"form-control" %>
           </div>
           <div>
@@ -36,30 +36,32 @@
             </button>            
             <%= f.text_field :ga, class:"form-control" %>
           </div>
-          <div>
-            <%= f.label "Coût Finance (M€):" %>
-            <button style="border:none;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Le chiffre d'affaires correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
-              <i class="far fa-xs fa-question-circle qm-color"></i>
-            </button>
-            <%= f.text_field :finance_globale, class:"form-control" %>
-          </div>
-          <div>
-            <%= f.label "Dépenses IT (M€):" %>
-            <button style="border:none;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Le chiffre d'affaires correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
-              <i class="far fa-xs fa-question-circle qm-color"></i>
-            </button>
-            <%= f.text_field :it, class:"form-control" %>
-          </div>
         </div>
-        <div class="col-6">
+        <div class="col-4">
           <div class = "mt-4">
+            <div>
+              <%= f.label "Coût Finance (M€):" %>
+              <button style="border:none;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Le chiffre d'affaires correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
+                <i class="far fa-xs fa-question-circle qm-color"></i>
+              </button>
+              <%= f.text_field :finance_globale, class:"form-control" %>
+            </div>
+            <div>
+              <%= f.label "Dépenses IT (M€):" %>
+              <button style="border:none;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Le chiffre d'affaires correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
+                <i class="far fa-xs fa-question-circle qm-color"></i>
+              </button>
+              <%= f.text_field :it, class:"form-control" %>
+            </div>
             <%= f.label "Selling & Marketing cost (M€):" %>
             <button style="border:none;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Le chiffre d'affaires correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
             <%= f.text_field :sm, class:"form-control" %>
           </div>
-          <div>
+        </div>
+        <div class="col-4">
+          <div class = "mt-4">
             <%= f.label "Dépenses Marketing (M€):" %>
             <button style="border:none;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Le chiffre d'affaires correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
               <i class="m-0 far fa-xs fa-question-circle qm-color"></i>
