@@ -15,11 +15,11 @@
       </div>
       <%= f.hidden_field :approach, value: "1" %>
       <div class = "mt-4">
-        <%= f.select(:activity, options_for_select(Activity.pluck(:label, :id), target_blank: true ))  %>
+        <%= f.select(:activity, options_for_select(Activity.pluck(:label, :id), target_blank: true))  %>
       </div>
-    </div>
-    <div class="modal-footer pt-2 pb-2">    
-      <button type="button" class="btn btn-primary btn-block step-2" data-dismiss="modal">Etape suivante</button>
+      <div class="pt-2 pb-2">
+        <button type="button" class="btn btn-primary btn-block step-2" style="z-index:-1;" data-dismiss="modal">Etape suivante</button>
+      </div>
     </div>
   </div>
 </div>
