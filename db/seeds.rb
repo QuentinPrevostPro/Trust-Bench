@@ -16,26 +16,23 @@ Kpi.create!(label: "Selling & Marketing cost sur CA");
 Kpi.create!(label: "Coût Marketing sur CA");
 
 #Aproach Creation
-Approach.create!(label: "Approche globale");
-Approach.create!(label: "Approche par fonction - Finance");
-Approach.create!(label: "Approche par fonction - RH");
-Approach.create!(label: "Approche par fonction - IT");
-Approach.create!(label: "Approche par fonction - Marketing & Ventes");
+Approach.create!(label: "Global SG&A");
+Approach.create!(label: "Fonction Finance");
+Approach.create!(label: "Fonction RH");
+Approach.create!(label: "Fonction IT");
+Approach.create!(label: "Fonctions Marketing & Ventes");
 
 #Activity Creation
-Activity.create!(label: "Aérospatial & Défense");
-Activity.create!(label: "Industrie de process");
-Activity.create!(label: "Grande consommation");
-Activity.create!(label: "Luxe");
-Activity.create!(label: "Industrie petites séries");
-Activity.create!(label: "Energie et Utilities");
-Activity.create!(label: "Distribution");
-Activity.create!(label: "Private Equity");
-Activity.create!(label: "Automobile");
+Activity.create!(label: "Secteur financier");
+Activity.create!(label: "Médias et communication");
+Activity.create!(label: "Prestations Intellectuelles");
+Activity.create!(label: "Industrie");
+Activity.create!(label: "Technologies");
+Activity.create!(label: "Energie");
+Activity.create!(label: "Utilities");
 Activity.create!(label: "Industrie pharmaceutique");
-Activity.create!(label: "Textile");
-Activity.create!(label: "Services");
-Activity.create!(label: "Non précisée");
+Activity.create!(label: "Transport et logistique");
+Activity.create!(label: "Distribution");
 
 #Size Creation
 Size.create!(label: "CA < 50M€")
