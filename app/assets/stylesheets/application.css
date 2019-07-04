@@ -34,6 +34,10 @@ html, body {
   overflow:hidden;
 } 
 
+body::-webkit-scrollbar { 
+  display: none; 
+}
+
 .qm-color {
   color: #C6C6C6;
   background-color: #FFFFFF;
