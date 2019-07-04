@@ -4,7 +4,10 @@ class FormsController < ApplicationController
   end
   def create
     @csv_array = []
-    
+    puts "<><><><><><><><><><><><><><>"
+    puts "test"
+    puts "<><><><><><><><><><><><><><>"
+
     #Size Category
     if params[:collected_datum][:ca_globale].to_f <= 500 #CA inférieur à 500M€
       params[:collected_datum][:size] = "1"
@@ -35,7 +38,7 @@ class FormsController < ApplicationController
       # Coût Marketing sur CA
       @collected_data_7 = CollectedDatum.new(value: params[:collected_datum][:marketing].to_f / params[:collected_datum][:ca_globale].to_f, numerator: params[:collected_datum][:marketing].to_f, denominator: params[:collected_datum][:ca_globale].to_f, first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 7)
           
-      if @collected_data_1.save! && @collected_data_2.save! && @collected_data_3.save! && @collected_data_4.save! && @collected_data_5.save! && @collected_data_6.save! && @collected_data_7.save! # save collected data in the db        
+      if @collected_data_1.save && @collected_data_2.save && @collected_data_3.save && @collected_data_4.save && @collected_data_5.save && @collected_data_6.save && @collected_data_7.save # save collected data in the db        
         # Table with collected data - preparation for csv export
         @csv_array << ["Libellé", "Collecte - Valeur", "Collecte - Numérateur", "Collecte - Dénominateur", "Benchmark - Valeur médiane", "Benchmark - Valeur min", "Benchmark - Valeur max"]
         @csv_array << [@collected_data_1.kpi.label, @collected_data_1.value, @collected_data_1.numerator, @collected_data_1.denominator]
