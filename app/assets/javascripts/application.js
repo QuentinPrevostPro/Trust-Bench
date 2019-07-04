@@ -43,28 +43,32 @@ window.onload = function() {
 function selectedApproach() {
   let approach = document.getElementById("mySelect").value;
   if (approach == "Default") {
-    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
     document.getElementById("form-modal").style.display = 'none';
   } else if (approach == "Global") {
     document.getElementById("form-modal").style.display = '';
     document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
     document.getElementById("form-modal").dataset.target = "#modalGlobal";
+    document.getElementById("form-modal").disabled = false;
   } else if (approach == "Finance") {
     document.getElementById("form-modal").style.display = '';
-    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").innerHTML = "A venir"
     document.getElementById("form-modal").dataset.target = "#modalFinance";
+    document.getElementById("form-modal").disabled = true;
   } else if (approach == "IT") {
     document.getElementById("form-modal").style.display = '';
-    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").innerHTML = "A venir"
     document.getElementById("form-modal").dataset.target = "#modalIT";
+    document.getElementById("form-modal").disabled = true;
   } else if (approach == "HR") {
     document.getElementById("form-modal").style.display = '';
-    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").innerHTML = "A venir"
     document.getElementById("form-modal").dataset.target = "#modalHR";
+    document.getElementById("form-modal").disabled = true;
   }  else if (approach == "Sales") {
     document.getElementById("form-modal").style.display = '';
-    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").innerHTML = "A venir"
     document.getElementById("form-modal").dataset.target = "#modalSales";
+    document.getElementById("form-modal").disabled = true;
   }
 }
 
@@ -109,3 +113,8 @@ $(function () {
     trigger: 'focus'
   })  
 })
+
+//Remove placeholder from form
+$('*').focus(function(){
+  $(this).attr("placeholder",'');
+});
