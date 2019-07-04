@@ -30,6 +30,10 @@
   z-index: 900;
 }
 
+html, body {
+  overflow:hidden;
+} 
+
 .qm-color {
   color: #C6C6C6;
   background-color: #FFFFFF;
