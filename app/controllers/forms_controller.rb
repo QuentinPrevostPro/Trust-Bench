@@ -4,9 +4,6 @@ class FormsController < ApplicationController
   end
   def create
     @csv_array = []
-    puts "<><><><><><><><><><><><><><>"
-    puts "test"
-    puts "<><><><><><><><><><><><><><>"
 
     #Size Category
     if params[:collected_datum][:ca_globale].to_f <= 500 #CA inférieur à 500M€
