@@ -11,7 +11,7 @@ Kpi.create!(label: "SG&A sur CA");
 Kpi.create!(label: "G&A sur CA");
 Kpi.create!(label: "Coût fonction Finance sur CA");
 Kpi.create!(label: "Coûts Informatiques sur CA");
-Kpi.create!(label: "Coût fonction commerciale sur CA");
+Kpi.create!(label: "Coût fonction Commerciale sur CA");
 Kpi.create!(label: "Coût Marketing sur CA");
 Kpi.create!(label: "Salariés gérés par ETP RH");
 
