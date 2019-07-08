@@ -9,11 +9,11 @@
 #KPI Creation
 Kpi.create!(label: "SG&A sur CA");
 Kpi.create!(label: "G&A sur CA");
-Kpi.create!(label: "Coût Finance sur CA");
-Kpi.create!(label: "SG&A sur CA");
-Kpi.create!(label: "Salariés gérés par ETP RH");
-Kpi.create!(label: "Selling & Marketing cost sur CA");
+Kpi.create!(label: "Coût fonction Finance sur CA");
+Kpi.create!(label: "Coûts Informatiques sur CA");
+Kpi.create!(label: "Coût fonction commerciale sur CA");
 Kpi.create!(label: "Coût Marketing sur CA");
+Kpi.create!(label: "Salariés gérés par ETP RH");
 
 #Aproach Creation
 Approach.create!(label: "Global SG&A");
@@ -35,10 +35,11 @@ Activity.create!(label: "Transport et logistique");
 Activity.create!(label: "Distribution");
 
 #Size Creation
-Size.create!(label: "CA < 50M€")
-Size.create!(label: "CA entre 50 et 250M€")
-Size.create!(label: "CA > 250M€")
-Size.create!(label: "Non précisée")
+Size.create!(label: "CA < 500M€")
+Size.create!(label: "CA entre 500M€ et 1Mrd€")
+Size.create!(label: "CA entre 1Mrd€ et 10Mrd€")
+Size.create!(label: "CA entre 10Mrd€ et 50Mrd€")
+Size.create!(label: "CA > 50Mrd€")
 
 #Bench Creation
 Bench.create!(median_value: "8.13%", min_value:"28.84%", max_value:"2.65%", source:"https://saibooks.com/sga-benchmarks/", kpi_id: 1, approach_id: 1, activity_id:6, size_id:4)
