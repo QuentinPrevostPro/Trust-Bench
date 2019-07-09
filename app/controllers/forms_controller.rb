@@ -37,6 +37,8 @@ class FormsController < ApplicationController
 
       if @collected_data_1.save && @collected_data_2.save && @collected_data_3.save && @collected_data_4.save && @collected_data_5.save && @collected_data_6.save && @collected_data_7.save # save collected data in the db        
         # Table with collected data - preparation for csv export
+        @csv_array << ["Périmètre:", @collected_data_1.approach.label, "Prénom:", @collected_data_1.first_name, "Nom:", @collected_data_1.last_name, "Courriel:", @collected_data_1.email, "Entreprise:", @collected_data_1.company, "Secteur:", @collected_data_1.activity.label, "Poste:", @collected_data_1.position]
+        @csv_array << [""]
         @csv_array << ["Libellé", "Collecte - Valeur", "Collecte - Numérateur", "Collecte - Dénominateur", "Benchmark - Valeur médiane", "Benchmark - Valeur min", "Benchmark - Valeur max"]
         @csv_array << [@collected_data_1.kpi.label, @collected_data_1.value, @collected_data_1.numerator, @collected_data_1.denominator]
         @csv_array << [@collected_data_2.kpi.label, @collected_data_2.value, @collected_data_2.numerator, @collected_data_2.denominator]

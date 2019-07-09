@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'trust-bench@argon-consult.com'
+  default from: 'no-reply@trust-bench.com'
   layout 'mailer'
 end
