@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_085053) do
+ActiveRecord::Schema.define(version: 2019_07_22_133118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,23 @@ ActiveRecord::Schema.define(version: 2019_06_18_085053) do
     t.string "label"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bench_archives", force: :cascade do |t|
+    t.float "median_value"
+    t.float "min_value"
+    t.float "max_value"
+    t.string "source"
+    t.bigint "kpi_id"
+    t.bigint "approach_id"
+    t.bigint "activity_id"
+    t.bigint "size_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_bench_archives_on_activity_id"
+    t.index ["approach_id"], name: "index_bench_archives_on_approach_id"
+    t.index ["kpi_id"], name: "index_bench_archives_on_kpi_id"
+    t.index ["size_id"], name: "index_bench_archives_on_size_id"
   end
 
   create_table "benches", force: :cascade do |t|
