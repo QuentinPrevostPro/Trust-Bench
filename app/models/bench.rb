@@ -6,10 +6,15 @@ class Bench < ApplicationRecord
 
   def self.to_csv
     attributes = %w{approach_id kpi_id activity_id size_id median_value min_value max_value source created_at updated_at}
-    CSV.generate(headers: true, col_sep: ';', encoding: 'ISO-8859-1') do |csv|
+    CSV.generate(headers: true, col_sep: ';', encoding: 'CP1252') do |csv|
       csv << attributes
       all.each do |bench| 
-        csv << bench.attributes.values_at(*attributes)
+        bench_label = bench.attributes.values_at(*attributes)
+        bench_label[0] = Approach.all.find_by(id:bench.attributes.values_at(*attributes)[0]).label
+        bench_label[1] = Kpi.all.find_by(id:bench.attributes.values_at(*attributes)[1]).label
+        bench_label[2] = Activity.all.find_by(id:bench.attributes.values_at(*attributes)[2]).label
+        bench_label[3] = Size.all.find_by(id:bench.attributes.values_at(*attributes)[3]).label
+        csv << bench_label
       end
     end
   end
