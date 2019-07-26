@@ -74,10 +74,10 @@ function selectedApproach() {
 
 $(function() {
   $(".step-2").click(function() {
-    $("#modalGlobalStep2").modal();
+    $("#modalGlobalStep2").modal('');
   });
   $(".step-3").click(function() {
-    $("#modalGlobalStep3").modal();
+    $("#modalGlobalStep3").modal('');
   });
   $(".step-4").click(function() {
     $("#modalGlobalStep3").modal('hide');
