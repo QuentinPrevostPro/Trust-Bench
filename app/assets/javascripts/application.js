@@ -72,18 +72,6 @@ function selectedApproach() {
   }
 }
 
-$(function() {
-  $(".step-2").click(function() {
-    $("#modalGlobalStep2").modal('');
-  });
-  $(".step-3").click(function() {
-    $("#modalGlobalStep3").modal('');
-  });
-  $(".step-4").click(function() {
-    $("#modalGlobalStep3").modal('hide');
-  });
-});
-
 $(document).ready(function() {
   
   let scrollLink = $('.scroll-smooth');
@@ -113,8 +101,3 @@ $(function () {
     trigger: 'focus'
   })  
 })
-
-//Remove placeholder from form
-$('*').focus(function(){
-  $(this).attr("placeholder",'');
-});

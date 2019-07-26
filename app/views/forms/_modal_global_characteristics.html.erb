@@ -18,7 +18,7 @@
         <%= f.select(:activity, options_for_select(Activity.pluck(:label, :id), target_blank: true))  %>
       </div>
       <div class="pt-2 pb-2">
-        <button type="button" class="btn btn-primary btn-block step-2" data-toggle="modal" data-target="#modalGlobalStep2">Etape suivante</button>
+        <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-toggle="modal"  data-target="#modalGlobalStep2">Etape suivante</button>
       </div>
     </div>
   </div>
