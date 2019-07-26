@@ -9,11 +9,11 @@
       <h3>Approche IT</h3>
       <h4>Saisie des metrics (2/3)</h4>
       <div class="progress-item">
-          <div class="progress">
-              <div class="progress-bar bg-primary" role="progressbar" style="width: 66.6666%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>67%</span></div>
-          </div>
+        <div class="progress">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: 33.3333%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>33%</span></div>
         </div>
-      <div class="row" style="overflow: hidden; height: 300px; style="border:2px red solid;">
+      </div>
+      <div class="row" style="overflow: hidden; height: 300px;">
         <div class="col-4">
           <div class = "mt-4">
             <%= f.label "Chiffre d'affaires (M€):"%>
@@ -67,7 +67,6 @@
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
             <%= f.text_field :ga, class:"form-control" %>
-          <div>
             <%= f.label "Coût Fonction Commerciale (M€):" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend les forces de ventes ainsi que les outils commerciaux.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
@@ -83,9 +82,10 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="modal-footer pt-2 pb-2">
-      <button type="button" class="btn btn-primary btn-block step-3" data-dismiss="modal">Etape suivante</button>
+      <div class="modal-footer pt-2 pb-2">
+        <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-toggle="modal" data-target="#modalITStep3">Etape suivante</button>
+      </div>
     </div>
   </div>
 </div>
+

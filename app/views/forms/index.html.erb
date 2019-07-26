@@ -118,13 +118,76 @@
   <!-- Metric modal -->
   <div class="modal fade" id="modalGlobalStep2" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <%= render 'forms/modal_global_metrics', f: f %>
-  </div> 
+  </div>
   <!-- Contact modal -->
   <div class="modal fade" id="modalGlobalStep3" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <%= render 'forms/modal_global_contacts', f: f %>
   </div>
 <% end %>
 
+<!-- Finance approach -->
+<%= form_for :collected_datum, :url => forms_path do |f| %>
+    <!-- Characteristic modal -->
+    <div class="modal fade" id="modalFinance" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_finance_characteristics', f: f %>
+    </div>
+    <!-- Metric modal -->
+    <div class="modal fade" id="modalFinanceStep2" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_finance_metrics', f: f %>
+    </div>
+    <!-- Contact modal -->
+    <div class="modal fade" id="modalFinanceStep3" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_finance_contacts', f: f %>
+    </div>
+<% end %>
 
 
+<!-- HR approach -->
+<%= form_for :collected_datum, :url => forms_path do |f| %>
+    <!-- Characteristic modal -->
+    <div class="modal fade" id="modalHR" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_HR_characteristics', f: f %>
+    </div>
+    <!-- Metric modal -->
+    <div class="modal fade" id="modalHRStep2" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_HR_metrics', f: f %>
+    </div>
+    <!-- Contact modal -->
+    <div class="modal fade" id="modalHRStep3" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_HR_contacts', f: f %>
+    </div>
+<% end %>
 
+
+<!-- IT approach -->
+<%= form_for :collected_datum, :url => forms_path do |f| %>
+    <!-- Characteristic modal -->
+    <div class="modal fade" id="modalIT" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_IT_characteristics', f: f %>
+    </div>
+    <!-- Metric modal -->
+    <div class="modal fade" id="modalITStep2" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_IT_metrics', f: f %>
+    </div>
+    <!-- Contact modal -->
+    <div class="modal fade" id="modalITStep3" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_IT_contacts', f: f %>
+    </div>
+<% end %>
+
+
+<!-- Sales approach -->
+<%= form_for :collected_datum, :url => forms_path do |f| %>
+    <!-- Characteristic modal -->
+    <div class="modal fade" id="modalSales" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_sales_characteristics', f: f %>
+    </div>
+    <!-- Metric modal -->
+    <div class="modal fade" id="modalSalesStep2" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_sales_metrics', f: f %>
+    </div>
+    <!-- Contact modal -->
+    <div class="modal fade" id="modalSalesStep3" style="border:2px red solid;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <%= render 'forms/modal_sales_contacts', f: f %>
+    </div>
+<% end %>

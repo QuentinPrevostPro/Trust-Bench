@@ -1,3 +1,4 @@
+# coding: utf-8
 class FormsController < ApplicationController
   def index
     @approaches = Approach.all
@@ -33,9 +34,9 @@ class FormsController < ApplicationController
       # Coût Marketing sur CA
       @collected_data_6 = CollectedDatum.new(value: params[:collected_datum][:marketing].to_f / params[:collected_datum][:ca_globale].to_f, numerator: params[:collected_datum][:marketing].to_f, denominator: params[:collected_datum][:ca_globale].to_f, first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 6)
       # Salariés gérés par ETP RH
-      @collected_data_7 = CollectedDatum.new(value: params[:collected_datum][:people].to_f / params[:collected_datum][:rh].to_f, numerator: params[:collected_datum][:people].to_f, denominator: params[:collected_datum][:rh].to_f, first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 7)    
+      @collected_data_7 = CollectedDatum.new(value: params[:collected_datum][:people].to_f / params[:collected_datum][:rh].to_f, numerator: params[:collected_datum][:people].to_f, denominator: params[:collected_datum][:rh].to_f, first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 7)
 
-      if @collected_data_1.save && @collected_data_2.save && @collected_data_3.save && @collected_data_4.save && @collected_data_5.save && @collected_data_6.save && @collected_data_7.save && params[:collected_datum][:rgpd] == "1" # save collected data in the db        
+      if @collected_data_1.save && @collected_data_2.save && @collected_data_3.save && @collected_data_4.save && @collected_data_5.save && @collected_data_6.save && @collected_data_7.save && params[:collected_datum][:rgpd] == "1" # save collected data in the db
         # Table with collected data - preparation for csv export
         @csv_array << ["Date", DateTime.now.strftime("%Y%m%d"), "Périmètre:", @collected_data_1.approach.label, "Prénom:", @collected_data_1.first_name, "Nom:", @collected_data_1.last_name, "Courriel:", @collected_data_1.email, "Entreprise:", @collected_data_1.company, "Secteur:", @collected_data_1.activity.label, "Poste:", @collected_data_1.position]
         @csv_array << [""]
@@ -50,13 +51,13 @@ class FormsController < ApplicationController
 
         # Table with benchmark - preparation for csv export
         @csv_array.each_with_index do |csv_array_row, index|
-          Bench.all.each do |bench|   
+          Bench.all.each do |bench|
             if bench.kpi.label == csv_array_row[0] && bench.approach_id == params[:collected_datum][:approach].to_i && bench.activity_id == params[:collected_datum][:activity].to_i && bench.size_id == params[:collected_datum][:size].to_i
               @csv_array[index][4] = bench.median_value
               @csv_array[index][5] = bench.min_value
               @csv_array[index][6] = bench.max_value
             end
-          end  
+          end
         end
 
         #CSV generation for export
@@ -65,7 +66,7 @@ class FormsController < ApplicationController
           encoding: 'ISO-8859-1'
         }
         @csv_export = CSV.generate(config) do |csv|
-          @csv_array.each do |csv_array_row| 
+          @csv_array.each do |csv_array_row|
               csv << csv_array_row
             end
           end
@@ -79,12 +80,16 @@ class FormsController < ApplicationController
       end
     #Approche par fonction - Finance
     elsif params[:collected_datum][:approach] == "2"
-    #Approche par fonction - RH  
+      redirect_to root_path
+    #Approche par fonction - RH
     elsif params[:collected_datum][:approach] == "3"
+      redirect_to root_path
     #Approche par fonction - IT
     elsif params[:collected_datum][:approach] == "4"
-    #Approche par fonction - Marketing & Ventes  
-    elsif params[:collected_datum][:approach] == "5"    
+      redirect_to root_path
+    #Approche par fonction - Marketing & Ventes
+    elsif params[:collected_datum][:approach] == "5"
+      redirect_to root_path
     end
   end
 end
