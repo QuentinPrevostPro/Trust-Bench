@@ -65,8 +65,10 @@
             <%= f.label "Montant G&A (M€):" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond au SG&A desquels les coûts commerciaux ont été soustrait.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
-            </button>            
+            </button>
             <%= f.text_field :ga, class:"form-control" %>
+          </div>
+          <div>
             <%= f.label "Coût Fonction Commerciale (M€):" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend les forces de ventes ainsi que les outils commerciaux.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
@@ -79,11 +81,11 @@
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
             <%= f.text_field :rh, class:"form-control" %>
-          </div>  
+          </div>
         </div>
       </div>
       <div class="modal-footer pt-2 pb-2">
-        <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-toggle="modal" data-target="#modalGlobalStep3">Etape suivante</button>    
+        <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-toggle="modal" data-target="#modalGlobalStep3">Etape suivante</button>
       </div>
     </div>
   </div>

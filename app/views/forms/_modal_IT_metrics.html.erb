@@ -13,7 +13,7 @@
             <div class="progress-bar bg-primary" role="progressbar" style="width: 33.3333%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span>33%</span></div>
         </div>
       </div>
-      <div class="row" style="overflow: hidden; height: 300px;">
+      <div class="row" style="overflow: hidden; height: 400px;">
         <div class="col-4">
           <div class = "mt-4">
             <%= f.label "Chiffre d'affaires (M€):"%>
@@ -23,37 +23,44 @@
             <%= f.text_field :ca_globale, class:"form-control" %>
           </div>
           <div>
-            <%= f.label "Coût Fonction Finance (M€):" %>
+            <%= f.label "Montant des OPEX IT:" %>
+            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale Finance, le SI Finance, les coûts d'externalisation ainsi que les autres frais de fonctionnement.">
+                <i class="far fa-xs fa-question-circle qm-color"></i>
+            </button>
+            <%= f.text_field :finance_globale, class:"form-control" %>
+          </div>
+          <div>
+            <%= f.label "Montant des CAPEX IT:" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale Finance, le SI Finance, les coûts d'externalisation ainsi que les autres frais de fonctionnement.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
             <%= f.text_field :finance_globale, class:"form-control" %>
           </div>
           <div>
-            <%= f.label "Coût Marketing & Com (M€):" %>
-            <button style="border:none; background-color:#FFFFFF;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale marketing, le marketing digital, les outils, l'analytics ainsi que les diverses études marketing.">
-              <i class="m-0 far fa-xs fa-question-circle qm-color"></i>
+            <%= f.label "Depenses en infrastructure:" %>
+            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend les forces de ventes ainsi que les outils commerciaux.">
+                <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :marketing, class:"form-control" %>
+            <%= f.text_field :sm, class:"form-control" %>
           </div>
         </div>
         <div class="col-4">
           <div class = "mt-4">
-            <%= f.label "Montant SG&A (M€):" %>
+              <%= f.label "Nombre de salaries IT internes:" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Inclus les coûts Finance, Informatiques, Marketing, RH, Juridique, de Management ainsi que les coûts commerciaux.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
             <%= f.text_field :sga, class:"form-control" %>
           </div>
           <div>
-            <%= f.label "Coûts informatiques (M€):" %>
+              <%= f.label "Nombre de ressources IT externes:" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond aux CapEx et OpEx (hors amortissements) de l'ensemble des SI.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
             <%= f.text_field :it, class:"form-control" %>
           </div>
           <div>
-            <%= f.label "Nombre total de salariés:" %>
+              <%= f.label "Couts de run:" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Prend en compte les postes en CDI et en CDD.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
@@ -62,23 +69,32 @@
         </div>
         <div class="col-4">
           <div class = "mt-4">
-            <%= f.label "Montant G&A (M€):" %>
+              <%= f.label "Depenses en projet:" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond au SG&A desquels les coûts commerciaux ont été soustrait.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
             <%= f.text_field :ga, class:"form-control" %>
-            <%= f.label "Coût Fonction Commerciale (M€):" %>
+          </div>
+          <div>
+            <%= f.label "Nombre total de projets:" %>
+            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend les forces de ventes ainsi que les outils commerciaux.">
+                <i class="far fa-xs fa-question-circle qm-color"></i>
+            </button>
+            <%= f.text_field :sm, class:"form-control" %>
+          </div>
+          <div>
+              <%= f.label "Nombre de projets digitaux" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend les forces de ventes ainsi que les outils commerciaux.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
             <%= f.text_field :sm, class:"form-control" %>
           </div>
           <div>
-            <%= f.label "Nb d'ETP de la fonction RH:" %>
-            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond à l'ensemble des ETPs RH internes et externes.">
-              <i class="far fa-xs fa-question-circle qm-color"></i>
+            <%= f.label "Depenses en applicatif:" %>
+            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend les forces de ventes ainsi que les outils commerciaux.">
+                <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :rh, class:"form-control" %>
+            <%= f.text_field :sm, class:"form-control" %>
           </div>
         </div>
       </div>
