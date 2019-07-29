@@ -14,8 +14,13 @@ class AdminController < ApplicationController
 	end
 
   def create
-		Bench.import(params[:bench][:file])
-		flash[:notice] = "Benchmark successfully updated"
-		redirect_to admin_index_path
+		import = Bench.import(params[:bench][:file])
+		if import == 1 
+			flash[:notice] = "Benchmark successfully updated"
+			redirect_to admin_index_path
+		elsif import == 0
+			flash[:error] = "Mauvais encodage du CSV. Encodage attendu: CP1252"
+			redirect_to admin_index_path
+		end
 	end
 end
