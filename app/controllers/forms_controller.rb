@@ -62,7 +62,7 @@ class FormsController < ApplicationController
         #CSV generation for export
         config = {
           col_sep: ';',
-          encoding: 'ISO-8859-1'
+          encoding: 'CP1252'
         }
         @csv_export = CSV.generate(config) do |csv|
           @csv_array.each do |csv_array_row| 

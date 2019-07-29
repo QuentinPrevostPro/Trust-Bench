@@ -21,15 +21,18 @@ class Bench < ApplicationRecord
 
   def self.import(file)
     
-    CSV.foreach(file.path, headers: true).with_index do |row,index|
+    CSV.foreach(file.path, headers: true, encoding: 'CP1252').with_index do |row,index|
       Bench.all.each do |bench|
         #Benchmark archiving
         if index == 0
           BenchArchive.create(median_value:bench.median_value, min_value:bench.min_value, max_value:bench.max_value, source:bench.source, kpi_id:bench.kpi_id, approach_id:bench.approach_id, activity_id:bench.activity_id, size_id:bench.size_id)
         end
         #Benchmark update
-        if bench.approach_id.to_s == row.first[1].split(";")[0] && bench.kpi_id.to_s == row.first[1].split(";")[1] && bench.activity_id.to_s == row.first[1].split(";")[2] && bench.size_id.to_s == row.first[1].split(";")[3]
-          bench.update(median_value: row.first[1].split(";")[4], min_value: row.first[1].split(";")[5], max_value: row.first[1].split(";")[6], source: row.first[1].split(";")[7])  
+        if bench.approach.label == row.first[1].split(";")[0] && bench.kpi.label == row.first[1].split(";")[1] && bench.activity.label == row.first[1].split(";")[2] && bench.size.label == row.first[1].split(";")[3]
+          bench.update(median_value: row.first[1].split(";")[4], min_value: row.first[1].split(";")[5], max_value: row.first[1].split(";")[6], source: row.first[1].split(";")[7])
+          return 1
+        else
+          return 0
         end
       end
     end
