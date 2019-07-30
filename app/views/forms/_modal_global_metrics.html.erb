@@ -20,21 +20,21 @@
             <button style="border:none; background-color:#FFFFFF;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :ca_globale, class:"form-control" %>
+            <%= f.text_field :ca_globale, class:"form-control", :tabindex => 1  %>
           </div>
           <div>
             <%= f.label "Coût Fonction Finance (M€):" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale Finance, le SI Finance, les coûts d'externalisation ainsi que les autres frais de fonctionnement.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :finance_globale, class:"form-control" %>
+            <%= f.text_field :finance_globale, class:"form-control", :tabindex => 4  %>
           </div>
           <div>
             <%= f.label "Coût Marketing & Com (M€):" %>
             <button style="border:none; background-color:#FFFFFF;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale marketing, le marketing digital, les outils, l'analytics ainsi que les diverses études marketing.">
               <i class="m-0 far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :marketing, class:"form-control" %>
+            <%= f.text_field :marketing, class:"form-control", :tabindex => 7  %>
           </div>
         </div>
         <div class="col-4">
@@ -43,21 +43,21 @@
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Inclus les coûts Finance, Informatiques, Marketing, RH, Juridique, de Management ainsi que les coûts commerciaux.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :sga, class:"form-control" %>
+            <%= f.text_field :sga, class:"form-control", :tabindex => 2  %>
           </div>
           <div>
             <%= f.label "Coûts informatiques (M€):" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond aux CapEx et OpEx (hors amortissements) de l'ensemble des SI.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :it, class:"form-control" %>
+            <%= f.text_field :it, class:"form-control", :tabindex => 5  %>
           </div>
           <div>
             <%= f.label "Nombre total de salariés:" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Prend en compte les postes en CDI et en CDD.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :people, class:"form-control" %>
+            <%= f.text_field :people, class:"form-control", :tabindex => 8  %>
           </div>
         </div>
         <div class="col-4">
@@ -66,26 +66,26 @@
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond au SG&A desquels les coûts commerciaux ont été soustrait.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :ga, class:"form-control" %>
+            <%= f.text_field :ga, class:"form-control", :tabindex => 3  %>
           </div>
           <div>
             <%= f.label "Coût Fonction Commerciale (M€):" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend les forces de ventes ainsi que les outils commerciaux.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :sm, class:"form-control" %>
+            <%= f.text_field :sm, class:"form-control", :tabindex => 6  %>
           </div>
           <div>
             <%= f.label "Nb d'ETP de la fonction RH:" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond à l'ensemble des ETPs RH internes et externes.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :rh, class:"form-control" %>
+            <%= f.text_field :rh, class:"form-control", :tabindex => 9  %>
           </div>
         </div>
       </div>
       <div class="modal-footer pt-2 pb-2">
-        <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-toggle="modal" data-target="#modalGlobalStep3">Etape suivante</button>
+          <button type="button" class="btn btn-primary btn-block" data-dismiss="modal" data-toggle="modal" data-target="#modalGlobalStep3", :tabindex => 10 >Etape suivante</button>
       </div>
     </div>
   </div>

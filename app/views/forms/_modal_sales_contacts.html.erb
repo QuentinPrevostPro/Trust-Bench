@@ -17,39 +17,39 @@
         <div class="col-4">
           <div class = "mt-4">
             <%= f.label "Nom" %>
-            <%= f.text_field :last_name, class:"form-control" %>
+            <%= f.text_field :last_name, class:"form-control", :tabindex => 1 %>
           </div>
           <div>
             <%= f.label "Poste occupé" %>
-            <%= f.text_field :position, class:"form-control" %>
+              <%= f.text_field :position, class:"form-control", :tabindex => 4  %>
           </div>
         </div>
         <div class="col-4">
           <div class = "mt-4">
             <%= f.label "Prénom" %>
-            <%= f.text_field :first_name, class:"form-control" %>
+              <%= f.text_field :first_name, class:"form-control", :tabindex => 2  %>
           </div>
           <div> 
             <%= f.label "Entreprise" %>
-            <%= f.text_field :company, class:"form-control" %>
+              <%= f.text_field :company, class:"form-control", :tabindex => 5  %>
           </div>
         </div>
         <div class="col-4">
           <div class = "mt-4">
             <%= f.label "Courriel" %>
-            <%= f.text_field :email, class:"form-control" %>
+              <%= f.text_field :email, class:"form-control", :tabindex => 3  %>
           </div>
         </div>
         <div class="col-12 m-0" style="display:flex;">
           <div>
-            <%= f.check_box :rgpd%>
+              <%= f.check_box :rgpd, :tabindex => 6 %>
           </div>
           <p>En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de la réalisation du benchmark.</p>
         </div>
       </div>
     </div>
     <div class="modal-footer pt-1 pb-2 m-0">
-      <%= f.submit "Demande du benchmark", class: "btn btn-primary btn-block" %>
+        <%= f.submit "Demande du benchmark", class: "btn btn-primary btn-block", :tabindex => 7  %>
     </div>
   </div>
 </div>

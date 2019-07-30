@@ -27,14 +27,14 @@
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale Finance, le SI Finance, les coûts d'externalisation ainsi que les autres frais de fonctionnement.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :finance_globale, class:"form-control" %>
+            <%= f.text_field :salaries_total, class:"form-control" %>
           </div>
           <div>
             <%= f.label "Nombre de salaries terrain:" %>
             <button style="border:none; background-color:#FFFFFF;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale marketing, le marketing digital, les outils, l'analytics ainsi que les diverses études marketing.">
               <i class="m-0 far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :marketing, class:"form-control" %>
+            <%= f.text_field :salaries_terrain, class:"form-control" %>
           </div>
         </div>
         <div class="col-4">
@@ -43,21 +43,21 @@
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Inclus les coûts Finance, Informatiques, Marketing, RH, Juridique, de Management ainsi que les coûts commerciaux.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :sga, class:"form-control" %>
+            <%= f.text_field :etp_RH, class:"form-control" %>
           </div>
           <div>
               <%= f.label "Nombre d'ETP de la fonction RH-paie:" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond aux CapEx et OpEx (hors amortissements) de l'ensemble des SI.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :it, class:"form-control" %>
+            <%= f.text_field :etp_RH_paie, class:"form-control" %>
           </div>
           <div>
               <%= f.label "Nombre d'ETP de la fonction RH-terrain::" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Prend en compte les postes en CDI et en CDD.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :people, class:"form-control" %>
+            <%= f.text_field :etp_RH_terrain, class:"form-control" %>
           </div>
         </div>
         <div class="col-4">
@@ -66,14 +66,14 @@
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond au SG&A desquels les coûts commerciaux ont été soustrait.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :ga, class:"form-control" %>
+            <%= f.text_field :service_finance, class:"form-control" %>
           </div>
           <div>
             <%= f.label "Maturite digitale RH:" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond à l'ensemble des ETPs RH internes et externes.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :rh, class:"form-control" %>
+            <%= f.text_field :maturite_digitale, class:"form-control" %>
           </div>
         </div>
       </div>
