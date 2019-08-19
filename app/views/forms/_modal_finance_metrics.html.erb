@@ -20,14 +20,14 @@
             <button style="border:none; background-color:#FFFFFF;" class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond à l'ensemble des ventes du dernier exercice exprimé en millions d'euro.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :ca_globale, class:"form-control" %>
+            <%= f.text_field :ca_globale, class:"form-control", :tabindex => 1 %>
           </div>
           <div>
             <%= f.label "Coût Fonction Finance (M€):" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend la masse salariale Finance, le SI Finance, les coûts d'externalisation ainsi que les autres frais de fonctionnement.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :cout_finance, class:"form-control" %>
+            <%= f.text_field :cout_finance, class:"form-control", :tabindex => 4  %>
           </div>
         </div>
         <div class="col-4">
@@ -36,14 +36,14 @@
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Inclus les coûts Finance, Informatiques, Marketing, RH, Juridique, de Management ainsi que les coûts commerciaux.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :cout_comptabilite, class:"form-control" %>
+            <%= f.text_field :cout_comptabilite, class:"form-control", :tabindex => 2  %>
           </div>
           <div>
             <%= f.label "Coûts de controle de gestion (M€):" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond aux CapEx et OpEx (hors amortissements) de l'ensemble des SI.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :cout_controle_gestion, class:"form-control" %>
+            <%= f.text_field :cout_controle_gestion, class:"form-control", :tabindex => 5  %>
           </div>
         </div>
         <div class="col-4">
@@ -52,14 +52,14 @@
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond au SG&A desquels les coûts commerciaux ont été soustrait.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :centre_service, class:"form-control" %>
+            <%= f.text_field :centre_service, class:"form-control", :tabindex => 3  %>
           </div>
           <div>
             <%= f.label "Maturite digitale :" %>
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Comprend les forces de ventes ainsi que les outils commerciaux.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.select(:maturite_digitale, options_for_select([[1, 1], [2, 2], [3, 3], [4, 4]]),  {target_blank: true} ,class:"form-control") %>
+            <%= f.select(:maturite_digitale, options_for_select([[1, 1], [2, 2], [3, 3], [4, 4]]),  {target_blank: true} ,class:"form-control", :tabindex => 6 ) %>
           </div>
         </div>
       </div>

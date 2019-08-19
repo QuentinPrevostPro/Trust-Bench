@@ -246,7 +246,6 @@ class FormsController < ApplicationController
 
     #Approche par fonction - Marketing & Ventes
     elsif params[:collected_datum][:approach] == "5"
-
       #- cout marketing et communication / CA
       @collected_data_1 = CollectedDatum.new(value: params[:collected_datum][:marketing].to_f / params[:collected_datum][:ca_globale].to_f, numerator: params[:collected_datum][:marketing].to_f, denominator: params[:collected_datum][:ca_globale].to_f, first_name: params[:collected_datum][:first_name], last_name: params[:collected_datum][:last_name], email: params[:collected_datum][:email], company: params[:collected_datum][:company], position: params[:collected_datum][:position], approach_id: params[:collected_datum][:approach], activity_id: params[:collected_datum][:activity], size_id: params[:collected_datum][:size], kpi_id: 21)
       #- Cout fonction commerciale / CA
