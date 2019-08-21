@@ -26,7 +26,6 @@
 </header>
 <!-- En-tête -->
 
-
 <!-- CTA -->
 <section class="p-0 pt-3 bg-primary" id="scroll-CTA">
   <div class="container">
@@ -109,7 +108,8 @@
 </section>
 <!-- Benchmark -->
 
-<!-- MODALS -->
+
+                        <!-- MODALS (the different dynamic steps of the form)-->
 <!-- Global approach -->
 <%= form_for :collected_datum, :url => forms_path do |f| %>
   <!-- Characteristic modal -->
@@ -142,7 +142,6 @@
     </div>
 <% end %>
 
-
 <!-- HR approach -->
 <%= form_for :collected_datum, :url => forms_path do |f| %>
     <!-- Characteristic modal -->
@@ -159,7 +158,6 @@
     </div>
 <% end %>
 
-
 <!-- IT approach -->
 <%= form_for :collected_datum, :url => forms_path do |f| %>
     <!-- Characteristic modal -->
@@ -175,7 +173,6 @@
         <%= render 'forms/modal_IT_contacts', f: f %>
     </div>
 <% end %>
-
 
 <!-- Sales approach -->
 <%= form_for :collected_datum, :url => forms_path do |f| %>
