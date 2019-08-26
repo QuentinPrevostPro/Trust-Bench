@@ -52,13 +52,6 @@
             </button>
             <%= f.text_field :etp_RH_paie, class:"form-control", :tabindex => 5  %>
           </div>
-          <div>
-              <%= f.label "Nombre d'ETP de la fonction RH-terrain::" %>
-            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Prend en compte les postes en CDI et en CDD.">
-              <i class="far fa-xs fa-question-circle qm-color"></i>
-            </button>
-            <%= f.text_field :etp_RH_terrain, class:"form-control", :tabindex => 8  %>
-          </div>
         </div>
         <div class="col-4">
           <div class = "mt-4">
@@ -73,7 +66,14 @@
             <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Correspond à l'ensemble des ETPs RH internes et externes.">
               <i class="far fa-xs fa-question-circle qm-color"></i>
             </button>
-            <%= f.text_field :maturite_digitale, class:"form-control", :tabindex => 6  %>
+            <%= f.select(:maturite_digitale, options_for_select([[1, 1], [2, 2], [3, 3], [4, 4]]),  {target_blank: true} ,class:"form-control", :tabindex => 6 ) %>
+          </div>
+          <div>
+              <%= f.label "Nombre d'ETP de la fonction RH-terrain:" %>
+            <button style="border:none; background-color:#FFFFFF;"  class="m-0 p-0" type="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Prend en compte les postes en CDI et en CDD.">
+              <i class="far fa-xs fa-question-circle qm-color"></i>
+            </button>
+            <%= f.text_field :etp_RH_terrain, class:"form-control", :tabindex => 8  %>
           </div>
         </div>
       </div>
