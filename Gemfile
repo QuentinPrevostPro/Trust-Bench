@@ -75,7 +75,4 @@ gem 'jquery-turbolinks'
 gem 'dependent-fields-rails'
 gem 'google_drive'
 gem 'devise'
-<<<<<<< HEAD
 gem 'nokogiri', '>= 1.10.4'
-=======
->>>>>>> a3bba98d932f255ce06588cd7ceef4a4c343dd10

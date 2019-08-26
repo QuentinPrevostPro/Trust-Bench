@@ -125,7 +125,6 @@ GEM
       multi_json (~> 1.11)
       os (>= 0.9, < 2.0)
       signet (~> 0.7)
-    hirb (0.7.3)
     httpclient (2.8.3)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
@@ -315,7 +314,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   google_drive
-  hirb
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
