@@ -3003,11 +3003,21 @@ input[type="button"].btn-block {
     color: rgba(0, 0, 0, 0.9); }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5); }
+  color: #FFF;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 19px; }
   .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-    color: rgba(0, 0, 0, 0.7); }
+    color: #FFF;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 19px;
+    border-bottom: 2px solid #F18E00; }
   .navbar-light .navbar-nav .nav-link.disabled {
-    color: rgba(0, 0, 0, 0.3); }
+    color: #FFF;
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 19px; }
 
 .navbar-light .navbar-nav .show > .nav-link,
 .navbar-light .navbar-nav .active > .nav-link,
