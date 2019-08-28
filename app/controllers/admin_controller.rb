@@ -16,10 +16,10 @@ class AdminController < ApplicationController
   def create
 		import = Bench.import(params[:bench][:file])
 		if import == 1 
-			flash[:notice] = "Benchmark successfully updated"
+			flash[:notice] = "Mise à jour du benchmark avec succès"
 			redirect_to admin_index_path
 		elsif import == 0
-			flash[:error] = "Mauvais encodage du CSV. Encodage attendu: CP1252"
+			flash[:error] = "Echec dans la mise à jour du benchmark"
 			redirect_to admin_index_path
 		end
 	end
