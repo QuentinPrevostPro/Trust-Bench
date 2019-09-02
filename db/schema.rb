@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_133118) do
+ActiveRecord::Schema.define(version: 2019_09_02_083856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 2019_07_22_133118) do
   end
 
   create_table "benches", force: :cascade do |t|
-    t.float "median_value"
-    t.float "min_value"
-    t.float "max_value"
+    t.string "median_value"
+    t.string "min_value"
+    t.string "max_value"
     t.string "source"
     t.bigint "kpi_id"
     t.bigint "approach_id"
@@ -106,4 +106,5 @@ ActiveRecord::Schema.define(version: 2019_07_22_133118) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end
