@@ -73,29 +73,27 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col">
-        <div class="boxed p-5">
-          <div class="container">
-            <div class="row justify-content-between align-items-center">
-              <div class="col-md-8">
-                <h2 class="display-3 mb-1">Je demande mon benchmark <b>gratuitement</b></h2>
-                <h5>Veuillez tout d'abord choisir le périmètre fonctionnel de l'analyse:</h5>
-                <div class="input-group mt-2">
-                  <div style="width:40%;">
-                    <select id="mySelect" onchange="selectedApproach()">
-                      <option value="Default">Choisir un périmètre</option>
-                      <option value="Global"><%= @approaches.find(1).label %></option>
-                      <option value="Finance"><%= @approaches.find(2).label %></option>
-                      <option value="HR"><%= @approaches.find(3).label %></option>
-                      <option value="IT"><%= @approaches.find(4).label %></option>
-                      <option value="Sales"><%= @approaches.find(5).label %></option>
-                    </select>
-                  </div>
-                  <button type="button" class="btn btn-primary" id="form-modal" data-toggle="modal" data-target=""></button>
+        <div class="container">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-md-8">
+              <h2 class="display-3 mb-1" style="color: #fff;">Je demande mon benchmark gratuitement</h2>
+              <h5 style="color: #fff;">Veuillez tout d'abord choisir le périmètre fonctionnel de l'analyse:</h5>
+              <div class="input-group mt-2">
+                <div style="width:40%; background-color:#fff;">
+                  <select id="mySelect" onchange="selectedApproach()">
+                    <option value="Default">Choisir un périmètre</option>
+                    <option value="Global"><%= @approaches.find(1).label %></option>
+                    <option value="Finance"><%= @approaches.find(2).label %></option>
+                    <option value="HR"><%= @approaches.find(3).label %></option>
+                    <option value="IT"><%= @approaches.find(4).label %></option>
+                    <option value="Sales"><%= @approaches.find(5).label %></option>
+                  </select>
                 </div>
+                <button type="button" class="btn btn-primary" id="form-modal" data-toggle="modal" data-target=""></button>
               </div>
-              <div class="col-md-4">
-                <%= image_tag "argon-logo.jpg"%>
-              </div>
+            </div>
+            <div class="col-md-4">
+              <%= image_tag "argon-form.svg"%>
             </div>
           </div>
         </div>
