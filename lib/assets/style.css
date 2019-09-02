@@ -14991,7 +14991,7 @@ footer {
       display: block;
       width: 20px;
       height: 2px;
-      background-color: #000;
+      background-color: #fff;
       outline: 1px solid transparent;
       -webkit-transition-property: background-color;
       -moz-transition-property: background-color;
@@ -15027,7 +15027,7 @@ footer {
     transform: translateY(-6px) rotate(-45deg);
     transform: translateY(-6px) rotate(-45deg); }
   .burger.clicked span:before, .burger.clicked span:after {
-    background-color: #000; }
+    background-color: #fff; }
   .burger.burger-dot {
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
