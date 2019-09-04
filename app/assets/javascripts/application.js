@@ -51,24 +51,24 @@ function selectedApproach() {
     document.getElementById("form-modal").disabled = false;
   } else if (approach == "Finance") {
     document.getElementById("form-modal").style.display = '';
-    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").innerHTML = "A venir"
     document.getElementById("form-modal").dataset.target = "#modalFinance";
-    document.getElementById("form-modal").disabled = false;
+    document.getElementById("form-modal").disabled = true;
   } else if (approach == "IT") {
     document.getElementById("form-modal").style.display = '';
-    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").innerHTML = "A venir"
     document.getElementById("form-modal").dataset.target = "#modalIT";
-    document.getElementById("form-modal").disabled = false;
+    document.getElementById("form-modal").disabled = true;
   } else if (approach == "HR") {
     document.getElementById("form-modal").style.display = '';
-    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").innerHTML = "A venir"
     document.getElementById("form-modal").dataset.target = "#modalHR";
-    document.getElementById("form-modal").disabled = false;
+    document.getElementById("form-modal").disabled = true;
   }  else if (approach == "Sales") {
     document.getElementById("form-modal").style.display = '';
-    document.getElementById("form-modal").innerHTML = "Demander mon benchmark"
+    document.getElementById("form-modal").innerHTML = "A venir"
     document.getElementById("form-modal").dataset.target = "#modalSales";
-    document.getElementById("form-modal").disabled = false;
+    document.getElementById("form-modal").disabled = true;
   }
 }
 

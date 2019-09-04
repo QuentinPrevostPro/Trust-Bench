@@ -48,3 +48,21 @@
 .fas {
   color: #333333;
 }
+
+.modal-width-1 {
+  width: 500px;
+}
+
+.modal-width-2 {
+  width: 1000px;
+}
+
+@media only screen and (max-width: 500px) {
+  .modal-width-1 {
+    width: 100%;
+  }
+  
+  .modal-width-2 {
+    width: 100%;
+  }
+}
