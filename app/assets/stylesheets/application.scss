@@ -57,6 +57,11 @@
   width: 1000px;
 }
 
+.overflow {
+  overflow: hidden;
+  height: 300px;
+}
+
 @media only screen and (max-width: 500px) {
   .modal-width-1 {
     width: 100%;
@@ -64,5 +69,15 @@
   
   .modal-width-2 {
     width: 100%;
+  }
+
+  .modal-height {
+    margin-top: 0;
+    height: 100%;
+  }
+
+  .overflow {
+    overflow: scroll;
+    height: 450px;
   }
 }
