@@ -103,22 +103,22 @@ $(function () {
 })
 
 //Close header on click
-$(function(){
-  $(".nav-link").click(function() {
-    console.log("test")
-    $('.navbar-collapse').hide()
-  });
-});
+
 $(function(){
   let navbarOpened = false;
   $(".navbar-toggler").click(function() {
     if (navbarOpened) {
       $('.navbar-collapse').hide()
       navbarOpened = false;
+
     } else {
       $('.navbar-collapse').show()
       navbarOpened = true;
     }
+  });
+  $(".nav-link").click(function() {
+    $('.navbar-collapse').hide()
+    navbarOpened = false;
   });
 });
 
