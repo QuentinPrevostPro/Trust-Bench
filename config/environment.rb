@@ -5,10 +5,10 @@ require_relative 'application'
 Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => ENV['SENDGRID_LOGIN'],
-  :password => ENV['SENDGRID_PWD'],
+  :user_name => 'quentin.prevost@argon-consult.com',
+  :password => 'Trust-bench',
   :domain => 'monsite.fr',
-  :address => 'smtp.sendgrid.net',
+  :address => 'smtp.office365.com',
   :port => 587,
   :authentication => :plain,
   :enable_starttls_auto => true
