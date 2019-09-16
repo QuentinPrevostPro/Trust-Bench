@@ -7,7 +7,7 @@ Rails.application.initialize!
 ActionMailer::Base.smtp_settings = {
   :user_name => ENV['EMAIL_SERVER'],
   :password => ENV['PASSWORD_SERVER'],
-  :domain => 'congrueit.com',
+  :domain => 'argon-consult.com',
   :address => 'smtp.office365.com',
   :port => 587,
   :authentication => :login,
