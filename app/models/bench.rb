@@ -28,10 +28,6 @@ class Bench < ApplicationRecord
 
     file.content_type.force_encoding('CP1252')
     CSV.foreach(file.path, headers: true, encoding: 'CP1252') do |row|
-      puts "<><><><><><><><><><><><><><><><><>"
-      puts row
-      puts row.to_s.split(";")[4]
-      puts "<><><><><><><><><><><><><><><><><>"
       Bench.create(median_value: row.to_s.split(";")[4], min_value: row.to_s.split(";")[5], max_value: row.to_s.split(";")[6], kpi_id: Kpi.find_by(label:row.to_s.split(";")[1]).id, approach_id: Approach.find_by(label:row.to_s.split(";")[0]).id, activity_id: Activity.find_by(label:row.to_s.split(";")[2]).id, size_id: Size.find_by(label:row.to_s.split(";")[3]).id)
     end
     

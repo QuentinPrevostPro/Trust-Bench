@@ -5,11 +5,11 @@ require_relative 'application'
 Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => 'quentin.prevost@argon-consult.com',
-  :password => 'Trust-bench',
-  :domain => 'monsite.fr',
+  :user_name => ENV['EMAIL_SERVER'],
+  :password => ENV['PASSWORD_SERVER'],
+  :domain => 'congrueit.com',
   :address => 'smtp.office365.com',
   :port => 587,
-  :authentication => :plain,
+  :authentication => :login,
   :enable_starttls_auto => true
 }
